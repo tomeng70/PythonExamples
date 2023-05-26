@@ -1,3 +1,7 @@
+# simple text based hangman game.
+# based on YouTube tutorial from NeuralNine
+# https://youtu.be/5x6iAKdJB6U
+
 # import the random number library so we can randomize the word.
 import random
 
@@ -107,6 +111,3 @@ if done:
     print(f"Congratulations, you won!  The  secret word was '{word}'")
 else:
     print(f"Game over.  The secret word was '{word}'")
-        
-        
-    
