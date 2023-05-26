@@ -1,7 +1,22 @@
 # import the random number library so we can randomize the word.
 import random
 
+# import the system function from the os module.
+# we will use this to create a function to clear the screen
 from os import system, name
+
+# define a function that clears the screen
+def clear():
+    # check what type of computer this is running on.
+    # then call the appropriate function for that system to clear the screen.
+ 
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+ 
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 # create a list of words that the program can choose from.
 list_of_words = ["apple", "bicyle", "chemical", "delicate", "evergreen", "freedom", 
@@ -28,6 +43,9 @@ max_mistakes = 6
 
 # game loop.  loop until done.
 while not done:
+    # clear the screen
+    clear()
+
     # loop through the letters of the word.
     # if the current letter has been used as a guess already,
     # then show the letter in the display.
@@ -86,9 +104,9 @@ while not done:
 # after they are done looping check to see if the done flag is true.
 # if so, all of the letters in the word were guessed successfully.
 if done:
-    print(f"Congratulations, you successfully guessed the secret word: {word}")
+    print(f"Congratulations, you won!  The  secret word was '{word}'")
 else:
-    print(f"Game over.  The secret word was {word}")
+    print(f"Game over.  The secret word was '{word}'")
         
         
     
